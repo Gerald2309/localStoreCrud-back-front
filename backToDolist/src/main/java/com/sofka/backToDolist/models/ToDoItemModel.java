@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class ToDoItemModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(unique = true, nullable = false)
     private Long id;
 
     private String text;

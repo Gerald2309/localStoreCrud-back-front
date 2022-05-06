@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 @Service
 public class ToDoItemService {
@@ -14,19 +13,19 @@ public class ToDoItemService {
     @Autowired
     ToDoItemRepository toDoItemRepository;
 
-    public ArrayList<ToDoItemModel> obtenerToDoItems(){
+    public ArrayList<ToDoItemModel> getToDoItems(){
         return (ArrayList<ToDoItemModel>) toDoItemRepository.findAll();
     }
 
-    public ToDoItemModel guardarToDoItem(ToDoItemModel toDoItem){
+    public ToDoItemModel saveToDoItem(ToDoItemModel toDoItem){
         return toDoItemRepository.save(toDoItem);
     }
 
-    public ToDoItemModel actualizarToDoItem(ToDoItemModel toDoItem){
+    public ToDoItemModel updateToDoItem(ToDoItemModel toDoItem){
         return toDoItemRepository.save(toDoItem);
     }
 
-    public boolean eliminarToDoItem(Long id) {
+    public boolean deleteToDoItem(Long id) {
         try{
             toDoItemRepository.deleteById(id);
             return true;
